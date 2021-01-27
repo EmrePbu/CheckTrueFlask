@@ -1,14 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Main Page</title>
-  </head>
-  <body>
-    <h1>Main Page</h1>
-    <h5>Sayi:</h5>
-    <p>{{number.on}}</p>
-    <p>{{number.yirmi}}</p>
-  </body>
-</html>
+{% extends "layout.html" %}
+
+<!-- extends edilen html in üzerine yazıyoruz-->
+{% block title %}
+  Main Page
+{% endblock title %}
+
+{% block blockname %}
+  <p>index page block</p>
+{% endblock blockname %}

@@ -5,10 +5,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    _number = dict()
-    _number['on'] = '10'
-    _number['yirmi'] = '20'
-    return render_template('index.html', number=_number)
+    return render_template('index.html')
 
 
 if __name__ == '__main__':
