@@ -6,7 +6,8 @@ app = Flask(__name__)
 # main page route
 @app.route('/')
 def index():
-    return render_template('index.html')
+    numbers = [1, 2, 3, 4, 5]
+    return render_template('index.html', numbers=numbers)
 
 
 # doc page
