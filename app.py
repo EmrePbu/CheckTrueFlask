@@ -81,12 +81,11 @@ def select_file(filename):
     content_list = RP.read_paragraph(filename=filepath)
     file_details = RP.file_properties(filename=filepath)
     file_header = RP.file_header(filename=filepath)
+    file_footer = RP.file_footer(filename=filepath)
     # RP.file_footer(filename=filepath)
-    RP.file_body(filename=filepath)
-    # RP.file_footnotes(filename=filepath)
-    # RP.file_endnotes(filename=filepath)
+    file_body = RP.file_body(filename=filepath)
 
-    return render_template('file_operations.html',  file_details=file_details, filename=filename, content_list=content_list, file_header=file_header)
+    return render_template('file_operations.html',  file_details=file_details, filename=filename, content_list=content_list, file_header=file_header, file_footer=file_footer, file_body=file_body)
 
 
 if __name__ == '__main__':

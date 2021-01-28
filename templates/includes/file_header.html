@@ -1,5 +1,5 @@
 <table class="table">
-    <thead>
+    <thead class="thead-color">
         <tr>
             <th scope="col"><i class="fas fa-heading"></i></th>
             <th scope="col">Başlıklar</th>
@@ -11,7 +11,7 @@
                 {% if i == null or i == '' %}
                     <tr>
                         <th scope="row"><i class="fas fa-times"></i></th>
-                        <td>Üst başlıkta hata var</td>
+                        <td>Üst başlıkta boşluk yada alt satır var</td>
                     </tr>
                 {% elif i!= null or i != '' or i != ' ' %}
                     <tr>
@@ -23,9 +23,13 @@
         {% else %}
             <tr>
                 <th scope="row"><i class="fas fa-minus"></i></th>
-                <td>Üst başlık bulunamamktadır.</td>
+                <td>Üst başlık bulunamaktadır.</td>
             </tr>
         {% endif %}
     </tbody>
 </table>
-  
+<style>
+    thead.thead-color{
+        background-color: #d4eaaa;
+    }
+  </style>

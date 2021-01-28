@@ -1,0 +1,35 @@
+<table class="table">
+    <thead class="thead-color">
+        <tr>
+            <th scope="col"><i class="fas fa-heading"></i></th>
+            <th scope="col">Başlıklar</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% if file_footer %}
+            {% for i in file_footer[0][0][0] %}
+                {% if i == null or i == '' %}
+                    <tr>
+                        <th scope="row"><i class="fas fa-times"></i></th>
+                        <td>Alt başlıkta boşluk yada alt satır var</td>
+                    </tr>
+                {% elif i!= null or i != '' or i != ' ' %}
+                    <tr>
+                        <th scope="row"><i class="fas fa-check"></i></th>
+                        <td>{{i}}</td>
+                    </tr>
+                {% endif %}
+            {% endfor %}
+        {% else %}
+            <tr>
+                <th scope="row"><i class="fas fa-minus"></i></th>
+                <td>Alt başlık bulunamaktadır.</td>
+            </tr>
+        {% endif %}
+    </tbody>
+</table>
+<style>
+    thead.thead-color{
+        background-color: #d4eaaa;
+    }
+  </style>
