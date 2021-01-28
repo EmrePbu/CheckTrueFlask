@@ -8,6 +8,7 @@ documents/*.tmp
 *.pdf
 *.tmp
 temp/
+__pycache__/
 # Word temporary
 ~$*.doc*
 
