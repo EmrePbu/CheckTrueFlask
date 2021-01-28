@@ -6,7 +6,7 @@ from passlib.hash import sha256_crypt
 from flask_wtf import FlaskForm
 from werkzeug.utils import secure_filename
 from werkzeug.middleware.shared_data import SharedDataMiddleware
-import read_file as RF
+import read_file as RP
 
 
 UPLOAD_FOLDER = 'documents'
@@ -76,7 +76,7 @@ def register():
 # selected file
 @app.route('/uploads/<filename>')
 def select_file(filename):
-    content_list = RF.read_file(
+    content_list = RP.read_paragraph(
         filename='{_UPLOAD_FOLDER}/{_filename}'.format(_UPLOAD_FOLDER=UPLOAD_FOLDER, _filename=filename))
     return render_template('file_operations.html', filename=filename, content_list=content_list)
 
