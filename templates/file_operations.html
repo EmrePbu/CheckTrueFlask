@@ -1,4 +1,38 @@
-{% extends 'layout.html' %} {% block body %} İşlem yapılacak dosya {{filename}}
+{% extends 'layout.html' %}
+<!--success color : #d4edda-->
+{% block style %}
+
+  h3.title {text-align: center;}
+  thead.thead-color{
+    
+    background-color: #d4edaa;
+  }
+{% endblock style %}
+
+
+{% block body %}
+
+<h3 class="title"><i class="fas fa-file-word"></i> Bilgisi Gösterilen Dosya: {{filename}}</h3>
+
+<table class="table">
+  <thead class="thead-color">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Paragraf etiketine sahip olan satırlar</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for p in content_list %}
+   {% if p != "" %}
+   <tr>
+    <th scope="row">•</th>
+    <td>{{p}}</td>
+  </tr>
+   {% endif %}
+    {% endfor %}
+  </tbody>
+</table>
+{% block script %}
 <script>
   // Warning before leaving the page (back button, or outgoinglink)
   window.onbeforeunload = function () {
@@ -7,5 +41,6 @@
     //return;
   };
 </script>
+{% endblock script %}
 
 {% endblock body %}
