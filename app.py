@@ -38,8 +38,7 @@ def upload_file():
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             # bu return işlemi kullanıcıya dosya indirmesi için redirect yapmayı sağlıyor
-            # return redirect(url_for('uploaded_file',
-            #                        filename=filename))
+            return redirect(url_for('select_file', filename=filename))
     return render_template('index.html')
 
 
@@ -72,12 +71,11 @@ def register():
     return render_template('register.html')
 
 
-"""
-# selecting file
-@app.route('/file/<string:filename>')
-def selectFile(filename):
-    return 'Selected file name: '+filename
-"""
+# selected file
+@app.route('/uploads/<filename>')
+def select_file(filename):
+    return render_template('file_operations.html', filename=filename)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
