@@ -1,0 +1,40 @@
+<table class="table">
+  <thead class="thead-color">
+    <tr>
+      <th scope="col"><i class="fas fa-user-tag"></i></th>
+      {% for key,value in file_details.items() %}
+      <th scope="col">
+        {% if key =='creator' %}Dosya Sahini
+        {% elif key =='lastModifiedBy'%}Son Düzenleyen
+        {% elif key=='revision'%}Gözden Geçirme
+        {% elif key=='created'%}Oluşturulma Tarihi
+        {% elif key =='modified'%}Düzenlenme Tarihi
+        {% elif key=='title' %}Başlık
+        {% elif key =='subject'%}Konu 
+        {% elif key =='keywords'%}Anahtar Kelimeler
+        {% elif key =='description'%}Açıklama
+        {% elif key =='category'%}Kategori
+        {% elif key=='contentStatus'%}İçerik Durumu
+        {% endif %}
+      </th>
+      {% endfor %}
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"><i class="fas fa-info-circle"></i></th>
+      {% for key,value in file_details.items() %}
+      <td>
+        {% if value!=None %}{{value}}
+        {% else %} -- 
+        {% endif %}</td>
+      {% endfor %}
+    </tr>
+  </tbody>
+</table>
+
+<style>
+  thead.thead-color{
+      background-color: #d4eaaa;
+  }
+</style>

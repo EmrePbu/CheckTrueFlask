@@ -1,77 +1,49 @@
 {% extends 'layout.html' %}
 <!--success color : #d4edda-->
 {% block style %}
-h3.title {
-  text-align: center;
-}
-thead.thead-color{
-  background-color: #d4edaa;
-}
-div.element-list{
-  text-align: center;
-  margin:.8rem;
-  padding: .8rem;
-  background-color: #d4edaa;
-  border-radius: 5rem;
-}
-.btn-success {
-  margin: .5rem;
-}
+  h3.title {
+    text-align: center;
+  }
 {%endblock style %}
 {% block body %}
 
-<h3 class="title">
-  <i class="fas fa-file-word"></i> Bilgisi Gösterilen Dosya: {{filename}}
-</h3>
-<!--
-<div class="element-list">
-  <input type="checkbox" name="color" value="paragraph"> Paragraflar </input>
-  <br>
-  <button id="btn" type="button" class="btn btn-success">success</button>
-</div>
--->
-<table class="table">
-  <thead class="thead-color">
-    <tr>
-      <th scope="col"><i class="fas fa-table"></i></th>
-      <th scope="col">Paragraf etiketine sahip olan satırlar</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% for p in content_list %} {% if p != "" %}
-    <tr>
-      <th scope="row">
-        <i class="fas fa-paragraph"></i>
-      </th>
-      <td>{{p}}</td>
-    </tr>
-    {% endif %} {% endfor %}
-  </tbody>
-</table>
+  <h3 class="title">
+    <i class="fas fa-file-word"></i> Bilgisi Gösterilen Dosya: {{filename}}
+  </h3>
+  
 
-{% block script %}
-<script>
-  function getSelectedCheckboxValues(name) {
-    const checkboxes = document.querySelectorAll(`input[name="${name}"]:checked`);
-    let values = [];
-    checkboxes.forEach((checkbox) => {
+  {% include 'includes/file_details.html' %}
+
+  {% include 'includes/paragraph.html' %}
+
+  
+  {% block script %}
+  <script>
+    function getSelectedCheckboxValues(name) {
+      const checkboxes = document.querySelectorAll(
+        `input[name="${name}"]:checked`
+      );
+      let values = [];
+      checkboxes.forEach((checkbox) => {
         values.push(checkbox.value);
+      });
+      return values;
+    }
+
+    const btn = document.querySelector('#btn');
+    btn.addEventListener('click', (event) => {
+      alert(getSelectedCheckboxValues('color'));
     });
-    return values;
-}
-
-const btn = document.querySelector('#btn');
-btn.addEventListener('click', (event) => {
-    alert(getSelectedCheckboxValues('color'));
-});
-</script>
-
-<script>
-  // Warning before leaving the page (back button, or outgoinglink)
-  window.onbeforeunload = function () {
-    return 'Do you really want to leave our brilliant application?';
-    //if we return nothing here (just calling return;) then there will be no pop-up question at all
-    //return;
-  };
-</script>
-{% endblock script %} {% endblock body %}
+  </script>
+  <!-- TODO: Bu kısmı aç
+  <script>
+    // Warning before leaving the page (back button, or outgoinglink)
+    window.onbeforeunload = function () {
+      return 'Do you really want to leave our brilliant application?';
+      //if we return nothing here (just calling return;) then there will be no pop-up question at all
+      //return;
+    };
+  </script>
+  -->
+  {% endblock script %}
+{% endblock body %}

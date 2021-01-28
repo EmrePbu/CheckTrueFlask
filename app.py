@@ -76,9 +76,11 @@ def register():
 # selected file
 @app.route('/uploads/<filename>')
 def select_file(filename):
-    content_list = RP.read_paragraph(
-        filename='{_UPLOAD_FOLDER}/{_filename}'.format(_UPLOAD_FOLDER=UPLOAD_FOLDER, _filename=filename))
-    return render_template('file_operations.html', filename=filename, content_list=content_list)
+    filepath = '{_UPLOAD_FOLDER}/{_filename}'.format(
+        _UPLOAD_FOLDER=UPLOAD_FOLDER, _filename=filename)
+    content_list = RP.read_paragraph(filename=filepath)
+    file_details = RP.file_properties(filename=filepath)
+    return render_template('file_operations.html',  file_details=file_details, filename=filename, content_list=content_list)
 
 
 if __name__ == '__main__':

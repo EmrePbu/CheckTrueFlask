@@ -1,0 +1,26 @@
+<table class="table">
+    <thead class="thead-color">
+        <tr>
+        <th scope="col"><i class="fas fa-table"></i></th>
+        <th scope="col">Paragraf etiketine sahip olan satırlar</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for p in content_list %}
+            {% if p != "" %}
+                <tr>
+                <th scope="row">
+                    <i class="fas fa-paragraph"></i>
+                </th>
+                <td>{{p}}</td>
+                </tr>
+            {% endif %}
+        {% endfor %}
+    </tbody>
+</table>
+
+<style>
+    thead.thead-color{
+        background-color: #d4eaaa;
+    }
+</style>

@@ -1,9 +1,12 @@
 
+documents/*.docx
+documents/*.doc
+documents/*.pdf
+documents/*.tmp
 *.docx
 *.doc
 *.pdf
 *.tmp
-
 # Word temporary
 ~$*.doc*
 
