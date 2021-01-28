@@ -80,7 +80,13 @@ def select_file(filename):
         _UPLOAD_FOLDER=UPLOAD_FOLDER, _filename=filename)
     content_list = RP.read_paragraph(filename=filepath)
     file_details = RP.file_properties(filename=filepath)
-    return render_template('file_operations.html',  file_details=file_details, filename=filename, content_list=content_list)
+    file_header = RP.file_header(filename=filepath)
+    # RP.file_footer(filename=filepath)
+    RP.file_body(filename=filepath)
+    # RP.file_footnotes(filename=filepath)
+    # RP.file_endnotes(filename=filepath)
+
+    return render_template('file_operations.html',  file_details=file_details, filename=filename, content_list=content_list, file_header=file_header)
 
 
 if __name__ == '__main__':
