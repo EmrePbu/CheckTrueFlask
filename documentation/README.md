@@ -12,7 +12,7 @@ ardından `localhost:5000` adresini tarayıcınızda ziyaret edin. Sizleri  `Res
 
 ![image-20210130021047530](https://raw.githubusercontent.com/EmrePbu/CheckTrueFlask/main/documentation/image-20210130021047530.png?token=AIBMSMPNG4VPVDH2ZOU7Q33ACSPFA)
 
-> Resim 1 - Sistemin ana sayfasının bit görünümü.
+> Resim 1 - Sistemin ana sayfasının bir görünümü.
 
 Dosya Seç butonunu kullanarak docx/doc seçin ve Yükle ve Analiz Et butonuna tıklayın. Ardından seçtiğiniz/görmek istediğiniz dosya özelliğine göre aşağıdaki ekran ile karşılaşacaksınız. 
 
