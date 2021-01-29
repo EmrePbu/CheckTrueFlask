@@ -1,10 +1,6 @@
 from metric_converter import CheckTrue
 import os
-from flask import Flask, render_template, flash, redirect, url_for, session, logging, request, send_from_directory
-from flask_mysqldb import MySQL
-from wtforms import Form, StringField, TextAreaField, PasswordField, FileField, validators
-from passlib.hash import sha256_crypt
-from flask_wtf import FlaskForm
+from flask import Flask, render_template, flash, redirect, url_for, request
 from werkzeug.utils import secure_filename
 import read_file as RF
 
