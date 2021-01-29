@@ -1,8 +1,5 @@
 
-documents/*.docx
-documents/*.doc
-documents/*.pdf
-documents/*.tmp
+
 *.docx
 *.doc
 *.pdf
