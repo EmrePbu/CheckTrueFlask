@@ -2,7 +2,7 @@
 <table class="table">
     <thead class="thead-color">
         <tr>
-        <th scope="col"><i class="fas fa-table"></i></th>
+        <th scope="col"><i class="fas fa-paragraph"></i></th>
         <th scope="col">Paragraf etiketine sahip olan satırlar</th>
         </tr>
     </thead>
@@ -11,7 +11,7 @@
             {% if p != "" %}
                 <tr>
                 <th scope="row">
-                    <i class="fas fa-paragraph"></i>
+                    {{loop.index}}
                 </th>
                 <td>{{p}}</td>
                 </tr>

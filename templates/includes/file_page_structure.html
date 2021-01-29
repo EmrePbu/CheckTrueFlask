@@ -2,9 +2,23 @@
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
+      <th scope="col"><i class="fas fa-sliders-h"></i></th>
       {% for i in file_margin  %}
-        <th scope="col">{{i}}</th>
+        <th scope="col">
+          
+          {% if i =='top' %}
+          Üst Kenar Boşluğu(3 cm)
+          {% elif i == 'right' %}
+          Sağ Kenar Boşluğu(2.5 cm)
+          {% elif i == 'bottom' %}
+          Alt Kenar Boşluğu(2.5 cm)
+          {% elif i == 'left' %}
+          Sol Kenar Boşluğu(3.25 cm)
+          {% elif i == 'portrait' %}
+          Yönlendirme
+          {% endif %}
+            
+        </th>
       {% endfor %}
     </tr>
   </thead>
