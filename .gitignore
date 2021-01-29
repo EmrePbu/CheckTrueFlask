@@ -1,5 +1,2 @@
-*.docx
-*.doc
-*.pdf
-*.tmp
 temp/
+documents/
