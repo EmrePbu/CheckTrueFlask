@@ -1,2 +1,1 @@
 # CheckTrueFlask
-[![Documentation Status](https://readthedocs.com/projects/emrepbu-checktrueflask/badge/?version=latest&token=d4714d9c2d3a0712a7d33f7eccb3e66a941855d04a9eaf887f121704105775d6)](https://emrepbu-checktrueflask.readthedocs-hosted.com/en/latest/?badge=latest)
