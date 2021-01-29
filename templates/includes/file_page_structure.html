@@ -1,0 +1,35 @@
+ <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        {% for i in file_margin  %}
+          <th scope="col">{{i}}</th>
+        {% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+     
+      {% for i in file_margin['top'] %}
+        <tr>
+        <th scope="row">{{loop.index}}</th>
+        {% set _top = file_margin['top'][loop.index-1] %}
+        {% set _right = file_margin['right'][loop.index-1] %}
+        {% set _bottom = file_margin['bottom'][loop.index-1] %}
+        {% set _left = file_margin['left'][loop.index-1] %}
+        {% set _portrait = file_margin['portrait'][loop.index-1] %}
+        <td>{{_top}} cm</td>
+        <td>{{_right}} cm</td>
+        <td>{{_bottom}} cm</td>
+        <td>{{_left}} cm</td>
+        <td>{{_portrait}}</td>
+        <td></td>
+      </tr>
+        
+      {% endfor %}
+     
+  
+      
+    </tbody>
+  </table>
+  
+  

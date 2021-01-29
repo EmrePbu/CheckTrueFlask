@@ -1,3 +1,4 @@
+from metric_converter import CheckTrue
 import os
 from flask import Flask, render_template, flash, redirect, url_for, session, logging, request, send_from_directory
 from flask_mysqldb import MySQL
@@ -5,8 +6,7 @@ from wtforms import Form, StringField, TextAreaField, PasswordField, FileField, 
 from passlib.hash import sha256_crypt
 from flask_wtf import FlaskForm
 from werkzeug.utils import secure_filename
-from werkzeug.middleware.shared_data import SharedDataMiddleware
-import read_file as RP
+import read_file as RF
 
 
 UPLOAD_FOLDER = 'documents'
@@ -78,14 +78,16 @@ def register():
 def select_file(filename):
     filepath = '{_UPLOAD_FOLDER}/{_filename}'.format(
         _UPLOAD_FOLDER=UPLOAD_FOLDER, _filename=filename)
-    content_list = RP.read_paragraph(filename=filepath)
-    file_details = RP.file_properties(filename=filepath)
-    file_header = RP.file_header(filename=filepath)
-    file_footer = RP.file_footer(filename=filepath)
-    # RP.file_footer(filename=filepath)
-    file_body = RP.file_body(filename=filepath)
+    content_list = RF.read_paragraph(filename=filepath)
+    file_details = RF.file_properties(filename=filepath)
+    file_header = RF.file_header(filename=filepath)
+    file_footer = RF.file_footer(filename=filepath)
+    file_margin = RF.read_margin(filename=filepath)
+    _checkMargin = CheckTrue.checkMargin
+    # RF.file_footer(filename=filepath)
+    file_body = RF.file_body(filename=filepath)
 
-    return render_template('file_operations.html',  file_details=file_details, filename=filename, content_list=content_list, file_header=file_header, file_footer=file_footer, file_body=file_body)
+    return render_template('file_operations.html', _checkMargin=_checkMargin, file_details=file_details, filename=filename, content_list=content_list, file_header=file_header, file_footer=file_footer, file_body=file_body, file_margin=file_margin)
 
 
 if __name__ == '__main__':
