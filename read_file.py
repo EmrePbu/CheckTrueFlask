@@ -3,22 +3,60 @@ import docx as _readFile
 from docx2python import docx2python
 
 """ DOCX İLE YAZDIKLARIM"""
-#sections = doc.sections
+# sections = doc.sections
 # for i in sections:
 #    print(i.start_type)
 
 
-def read_paragraph(filename):  # return value is an list example [EMRE ARGANA]
+def read_paragraph(filename):
+    """
+    ENGLISH:
+        Returns each paragraph in the file as a sequence.
+    TÜRKÇE:
+        Dosyadaki her bir paragrafı bir dizi olarak geri döndürür.
+    \nArgs:
+        filename (str):
+            ENGLISH:
+                File path.
+            TÜRKÇE:
+                Dosya yolu.
+    \nReturns:
+        str:
+        ENGLISH:
+            Returns each line in the given file as a string.
+        TÜRKÇE:
+            Verilen dosyadaki her bir satırı dizi şeklinde geri döndürür.
+    """
     doc = _readFile.Document(filename)
     return [p.text for p in doc.paragraphs]
 
 
 # None left oluyor standart olan
 # eğer None ve i.text i null ise enter tuşu oluyor alt satıra geçmek
-#CENTER (1)
-#RIGHT (2)
-#JUSTIFY (3)
+# CENTER (1)
+# RIGHT (2)
+# JUSTIFY (3)
 def read_alignment(filename):
+    """
+    ENGLISH:
+        It is used to find the alignment values of each paragraph in the file.
+    TÜRKÇE:
+        Dosyadaki her bir paragrafın hizalama değerlerini bulmaya yarar.
+    \nArgs:
+        filename (str):
+            ENGLISH:
+                File path.
+            TÜRKÇE:
+                Dosya yolu.
+    \nReturns:
+        str:
+        ENGLISH:
+            Returns the alignment values as a dictionary data structure.
+        TÜRKÇE:
+            Hizalama değerlerini sözlük veri yapısı şeklinde geri döndürür.
+        `mainAlignmentArray['alignment']`
+        `mainAlignmentArray['text']`
+    """
     mainAlignmentArray = {}
     paragraphAlignmentArray = []
     paragraphTextArray = []
@@ -33,6 +71,29 @@ def read_alignment(filename):
 
 
 def read_margin(filename):
+    """
+    ENGLISH:
+        It is used to find the margin values of each paragraph in the file.
+    TÜRKÇE:
+        Dosyadaki her bir paragrafın kenar boşluk değerlerini bulmaya yarar.
+    \nArgs:
+        filename (str):
+            ENGLISH:
+                File path.
+            TÜRKÇE:
+                Dosya yolu.
+    \nReturns:
+        str:
+        ENGLISH:
+            Returns the margin values as a dictionary data structure.
+        TÜRKÇE:
+            Kenar boşluk değerlerini sözlük veri yapısı şeklinde geri döndürür.
+        `mainMarginArray['top']`
+        `mainMarginArray['right']`
+        `mainMarginArray['bottom']`
+        `mainMarginArray['left']`
+        `mainMarginArray['portrait']`
+    """
     mainMarginArray = {}
     topMarginArray = []
     rightMarginArray = []
@@ -60,6 +121,26 @@ def read_margin(filename):
 
 
 def read_indent(filename):
+    """
+    ENGLISH:
+        It is used to find the indent values of each paragraph in the file.
+    TÜRKÇE:
+        Dosyadaki her bir paragrafın girinti değerlerini bulmaya yarar.
+    \nArgs:
+        filename (str):
+            ENGLISH:
+                File path.
+            TÜRKÇE:
+                Dosya yolu.
+    \nReturns:
+        str:
+        ENGLISH:
+            Returns the indent values as a dictionary data structure.
+        TÜRKÇE:
+            Girinti değerlerini sözlük veri yapısı şeklinde geri döndürür.
+        `read_indent['left']`
+        `read_indent['right']`
+    """
     mainIndentArray = {}
     leftIndent = []
     rightIndent = []
@@ -84,25 +165,76 @@ def file_save_image(filename, image_folder):
 
 
 def file_properties(filename):
+    """
+    ENGLISH:
+        It is a method that provides access to file properties.
+    TÜRKÇE:
+        Dosya özelliklerine ulaşmayı sağlayan metoddur.
+    \nArgs:
+        filename (str):
+            ENGLISH:
+                File path.
+            TÜRKÇE:
+                Dosya yolu.
+    \nReturns:
+        str:
+        ENGLISH:
+            Returns a dictionary data structure containing file properties.
+        TÜRKÇE:
+            Dosya özelliklerini içeren bir sözlük veri yapısı döndürür.
+    """
     doc = docx2python(filename)
     return doc.properties
 
 
-# includes/file_header.html de kontrolu yapıldı
 def file_header(filename):
+    """
+    ENGLISH:
+        It is the method that provides access to the header of the file.
+    TÜRKÇE:
+        Dosyanın üst başlığını ulaşmayı sağlayan metoddur.
+    \nArgs:
+        filename (str):
+            ENGLISH:
+                File path.
+            TÜRKÇE:
+                Dosya yolu.
+    \nReturns:
+        str:
+        ENGLISH:
+            Returns a TablesList containing file properties.
+        TÜRKÇE:
+            Dosya özelliklerini içeren bir TablesList döndürür.
+    """
     doc = docx2python(filename)
     return doc.header
 
 
-# Dönüş türü [] list
 def file_footer(filename):
+    """
+    ENGLISH:
+        It is the method that provides access to the footer of the file.
+    TÜRKÇE:
+        Dosyanın alt başlığını ulaşmayı sağlayan metoddur.
+    \nArgs:
+        filename (str):
+            ENGLISH:
+                File path.
+            TÜRKÇE:
+                Dosya yolu.
+    \nReturns:
+        str:
+        ENGLISH:
+            Returns a TablesList containing file properties.
+        TÜRKÇE:
+            Dosya özelliklerini içeren bir TablesList döndürür.
+    """
     doc = docx2python(filename)
     return doc.footer
 
 
 # Dönüş türü [] list
 # genelde bütün data bu kısımda oluyor
-# html ile parde ederek yapıyorum
 def file_body(filename):
     doc = docx2python(filename)
     return doc.body
