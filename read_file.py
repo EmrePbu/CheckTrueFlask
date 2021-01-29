@@ -23,8 +23,8 @@ def read_alignment(filename):
     paragraphAlignmentArray = []
     paragraphTextArray = []
     doc = _readFile.Document(filename)
-    _paragraph = doc.paragraphs
-    for i in _paragraph:
+    paragraph = doc.paragraphs
+    for i in paragraph:
         paragraphAlignmentArray.append(i.paragraph_format.alignment)
         paragraphTextArray.append(i.text)
     mainAlignmentArray['alignment'] = paragraphAlignmentArray
@@ -56,8 +56,23 @@ def read_margin(filename):
     mainMarginArray['bottom'] = bottomMarginArray
     mainMarginArray['left'] = leftMarginArray
     mainMarginArray['portrait'] = portraitMarginArray
-
     return mainMarginArray
+
+
+def read_indent(filename):
+    mainIndentArray = {}
+    leftIndent = []
+    rightIndent = []
+    doc = _readFile.Document(filename)
+    indent = doc.paragraphs
+    for i in indent:
+        leftIndent.append(round(Metric.emuToCm(
+            i.paragraph_format.left_indent), 2))
+        rightIndent.append(round(Metric.emuToCm(
+            i.paragraph_format.right_indent), 2))
+    mainIndentArray['left'] = leftIndent
+    mainIndentArray['right'] = rightIndent
+    return mainIndentArray
 
 
 """DOCX2PYTHON İLE YAZDIKLARIM"""

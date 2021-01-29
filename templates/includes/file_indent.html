@@ -1,0 +1,21 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+          {% for i in file_indent %}
+            <th scope="col">{{i}} indent</th>
+          {% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in file_indent['left']%}
+      {% set _left = file_indent['left'][loop.index-1]%}
+      {% set _right = file_indent['right'][loop.index-1]%}
+        <tr>
+          <th scope="row">{{loop.index}}</th>
+          <td>{{_left}} cm</td>
+          <td>{{_right}} cm</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>

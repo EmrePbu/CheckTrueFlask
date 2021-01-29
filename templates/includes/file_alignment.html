@@ -2,6 +2,9 @@
     <thead>
       <tr>
         <th scope="col">#</th>
+        {% for i in file_indent %}
+          <th scope="col">{{i}} indent</th>
+        {% endfor %}
         {% for i in file_alignment %}
           <th scope="col">{{i}}</th>
         {% endfor %}
@@ -11,9 +14,13 @@
       {% for i in file_alignment['text']  %}
         {% set _alignment = file_alignment['alignment'][loop.index-1] %}
         {% set _text = file_alignment['text'][loop.index-1] %}
+        {% set _left = file_indent['left'][loop.index-1]%}
+        {% set _right = file_indent['right'][loop.index-1]%}
         {% if (_text != '' and _text != '\t') and (_text != '\t\t') %}
           <tr>
             <th scope="row">{{loop.index}}</th>
+              <td>{{_left}} cm</td>
+              <td>{{_right}} cm</td>
               <td>
                 {% if _alignment == 1 %}
                   CENTER

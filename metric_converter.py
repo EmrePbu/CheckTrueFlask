@@ -1,22 +1,34 @@
 class Metric:
     # geri dönüş değeri emu cinsinden
     def cmToEmu(cmLenght):
-        return cmLenght*360000
+        if cmLenght is None:
+            return 0
+        else:
+            return cmLenght*360000
 
     # ggeri dönüş değeri cm cinsinden
 
     def emuToCm(emuLenght):
-        return emuLenght/360000
+        if emuLenght is None:
+            return 0
+        else:
+            return int(emuLenght)/360000
 
     # geri dönüş değeri emu cinsinden
 
     def inchToEmu(inchLenght):
-        return inchLenght*914400
+        if inchLenght is None:
+            return 0
+        else:
+            return inchLenght*914400
 
     # ggeri dönüş değeri inch cinsinden
 
     def emuToIcnh(emuLenght):
-        return emuLenght/914400
+        if emuLenght is None:
+            return 0
+        else:
+            return emuLenght/914400
     #  https://developers.google.com/slides/reference/rest/v1/Unit
 
 
