@@ -13,38 +13,51 @@ def read_paragraph(filename):  # return value is an list example [EMRE ARGANA]
     return [p.text for p in doc.paragraphs]
 
 
+# None left oluyor standart olan
+# eğer None ve i.text i null ise enter tuşu oluyor alt satıra geçmek
+#CENTER (1)
+#RIGHT (2)
+#JUSTIFY (3)
+def read_alignment(filename):
+    mainAlignmentArray = {}
+    paragraphAlignmentArray = []
+    paragraphTextArray = []
+    doc = _readFile.Document(filename)
+    _paragraph = doc.paragraphs
+    for i in _paragraph:
+        paragraphAlignmentArray.append(i.paragraph_format.alignment)
+        paragraphTextArray.append(i.text)
+    mainAlignmentArray['alignment'] = paragraphAlignmentArray
+    mainAlignmentArray['text'] = paragraphTextArray
+    return mainAlignmentArray
+
+
 def read_margin(filename):
-    mainArr = {}
-    topArr = []
-    rightArr = []
-    bottomArr = []
-    leftArr = []
-    portraitArr = []
+    mainMarginArray = {}
+    topMarginArray = []
+    rightMarginArray = []
+    bottomMarginArray = []
+    leftMarginArray = []
+    portraitMarginArray = []
     doc = _readFile.Document(filename)
     sections = doc.sections
     for i in sections:
         if(str(i.start_type) == 'NEW_PAGE (2)'):
-            # print(i.orientation)
             if(str(i.orientation) == 'PORTRAIT (0)'):
-                portraitArr.append('Dikey')
+                portraitMarginArray.append('Dikey')
             if(str(i.orientation) == 'LANDSCAPE (1)'):
-                portraitArr.append('Yatay')
+                portraitMarginArray.append('Yatay')
+            topMarginArray.append(round(Metric.emuToCm(i.top_margin), 2))
+            rightMarginArray.append(round(Metric.emuToCm(i.right_margin), 2))
+            bottomMarginArray.append(round(Metric.emuToCm(i.bottom_margin), 2))
+            leftMarginArray.append(round(Metric.emuToCm(i.left_margin), 2))
+    mainMarginArray['top'] = topMarginArray
+    mainMarginArray['right'] = rightMarginArray
+    mainMarginArray['bottom'] = bottomMarginArray
+    mainMarginArray['left'] = leftMarginArray
+    mainMarginArray['portrait'] = portraitMarginArray
 
-            topArr.append(round(Metric.emuToCm(i.top_margin), 2))
-            rightArr.append(round(Metric.emuToCm(i.right_margin), 2))
-            bottomArr.append(round(Metric.emuToCm(i.bottom_margin), 2))
-            leftArr.append(round(Metric.emuToCm(i.left_margin), 2))
-    mainArr['top'] = topArr
-    mainArr['right'] = rightArr
-    mainArr['bottom'] = bottomArr
-    mainArr['left'] = leftArr
-    mainArr['portrait'] = portraitArr
-
-    # mainArr.append(topArr)
-    # mainArr.append(rightArr)
-    # mainArr.append(bottomArr)
-    # mainArr.append(leftArr)
-    return mainArr
+    return mainMarginArray
 
 
 """DOCX2PYTHON İLE YAZDIKLARIM"""

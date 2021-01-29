@@ -84,10 +84,11 @@ def select_file(filename):
     file_footer = RF.file_footer(filename=filepath)
     file_margin = RF.read_margin(filename=filepath)
     _checkMargin = CheckTrue.checkMargin
+    file_alignment = RF.read_alignment(filename=filepath)
     # RF.file_footer(filename=filepath)
     file_body = RF.file_body(filename=filepath)
 
-    return render_template('file_operations.html', _checkMargin=_checkMargin, file_details=file_details, filename=filename, content_list=content_list, file_header=file_header, file_footer=file_footer, file_body=file_body, file_margin=file_margin)
+    return render_template('file_operations.html', _checkMargin=_checkMargin, file_details=file_details, filename=filename, content_list=content_list, file_header=file_header, file_footer=file_footer, file_body=file_body, file_margin=file_margin, file_alignment=file_alignment)
 
 
 if __name__ == '__main__':

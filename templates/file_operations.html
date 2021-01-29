@@ -16,71 +16,9 @@
   {% include 'includes/file_header.html' %}
   {% include 'includes/file_footer.html' %}
   {% include 'includes/paragraph.html' %}
-
+  {% include 'includes/file_page_structure.html' %}
 -->
-<!--{% include 'includes/file_page_structure.html' %}-->
-
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      {% for i in file_margin  %}
-        <th scope="col">{{i}}</th>
-      {% endfor %}
-    </tr>
-  </thead>
-  <tbody>
-    {% for i in file_margin['top'] %}
-      <tr>
-      <th scope="row">{{loop.index}}</th>
-      {% set _top = file_margin['top'][loop.index-1] %}
-      {% set _right = file_margin['right'][loop.index-1] %}
-      {% set _bottom = file_margin['bottom'][loop.index-1] %}
-      {% set _left = file_margin['left'][loop.index-1] %}
-      {% set _portrait = file_margin['portrait'][loop.index-1] %}
-      <td>
-        {% if _checkMargin(3.00, _top) %}
-        <i class="fas fa-check"></i> {{_top}} cm
-        {% else %}
-        <i class="fas fa-times-circle"></i> {{_top}} cm
-        {% endif %}
-      </td>
-      <td>
-        {% if _checkMargin(2.50, _right) %}
-        <i class="fas fa-check"></i> {{_right}} cm
-        {% else %}
-        <i class="fas fa-times-circle"></i> {{_right}} cm
-        {% endif %}
-      </td>
-      <td>
-        {% if _checkMargin(2.50, _bottom) %}
-        <i class="fas fa-check"></i> {{_bottom}} cm
-        {% else %}
-        <i class="fas fa-times-circle"></i> {{_bottom}} cm
-        {% endif %}
-      </td>
-      <td>
-        {% if _checkMargin(3.25, _left) %}
-        <i class="fas fa-check"></i> {{_left}} cm
-        {% else %}
-        <i class="fas fa-times-circle"></i> {{_left}} cm
-        {% endif %}
-      </td>
-      <td>
-        
-        {% if _portrait == 'Dikey' %}
-        <i class="fas fa-arrows-alt-v"></i> {{_portrait}}
-        {% elif _portrait == 'Yatay' %}
-        <i class="fas fa-arrows-alt-h"></i> {{_portrait}}
-        {% endif %}
-          
-      </td>
-    </tr>
-    {% endfor %}
-  </tbody>
-</table>
-
-
+ {% include 'includes/file_alignment.html' %}
   {% block script %}
   <script>
     function getSelectedCheckboxValues(name) {
