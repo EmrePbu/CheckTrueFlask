@@ -22,7 +22,7 @@ Kullandığım kütüphaneler:
 
 ardından `localhost:5000` adresini tarayıcınızda ziyaret edin. Sizleri `Resim 1` deki gibi bir ekran kaşılayacaktır.
 
-<img src="./images/image-20210130021047530.png">
+<img src="./documentation/images/image-20210130021047530.png">
 
 > Resim 1 - Sistemin ana sayfasının bir görünümü.
 
@@ -32,31 +32,31 @@ Dosya Seç butonunu kullanarak docx/doc seçin ve analiz etmek istediğiniz öze
 
 
 
-<img src="./images/image-20210130015638143.png">
+<img src="./documentation/images/image-20210130015638143.png">
 
 > Resim 2 - Dosya özelliklerinin görünümü
 
 ### Dosya Üst ve Alt Başlıkları
 
-<img src="./images/image-20210130021831285.png">
+<img src="./documentation/images/image-20210130021831285.png">
 
 > Resim 3 - Dosyada bulunan alt ve üst başlıkların kontrolu
 
 ### Paragraf
 
-<img src="./images/image-20210130022306238.png">
+<img src="./documentation/images/image-20210130022306238.png">
 
 > Resim 4 - Dosyada bulunan paragrafların listesi ve bulundukları sıra numarası
 
 ### Dosya Sayfa Yapısı
 
-<img src="./images/image-20210130023452440.png">
+<img src="./documentation/images/image-20210130023452440.png">
 
 > Resim 5 - Kenar boşlukları ve yönlendirmeye dair bilgilerin bulunduğu ekran
 
 ### Paragraf Hizalama ve Girinti
 
-<img src="./images/image-20210130023756476.png">
+<img src="./documentation/images/image-20210130023756476.png">
 
 > Resim 6 - Dosyada bulunan her bir paragrafın durumun gösterildiği ekran
 
