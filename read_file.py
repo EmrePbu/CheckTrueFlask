@@ -70,7 +70,7 @@ def read_alignment(filename):
     return mainAlignmentArray
 
 
-def read_margin(filename):
+def read_page_structure(filename):
     """
     ENGLISH:
         It is used to find the margin values of each paragraph in the file.
@@ -120,7 +120,7 @@ def read_margin(filename):
     return mainMarginArray
 
 
-def read_indent(filename):
+def read_alignment_and_indent(filename):
     """
     ENGLISH:
         It is used to find the indent values of each paragraph in the file.
@@ -138,8 +138,8 @@ def read_indent(filename):
             Returns the indent values as a dictionary data structure.
         TÜRKÇE:
             Girinti değerlerini sözlük veri yapısı şeklinde geri döndürür.
-        `read_indent['left']`
-        `read_indent['right']`
+        `read_alignment_and_indent['left']`
+        `read_alignment_and_indent['right']`
     """
     mainIndentArray = {}
     leftIndent = []
