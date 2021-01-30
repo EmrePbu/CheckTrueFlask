@@ -15,7 +15,7 @@ app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
 
 def allowed_file(filename):
     return '.' in filename and \
-           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+        filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 
 # main page route
@@ -52,6 +52,9 @@ def upload_file():
             elif request.form['submit_button'] == 'Paragraf Hizalama ve Girinti':
                 return redirect(url_for('file_alignment_and_indent', filename=filename))
 
+            elif request.form['submit_button'] == 'Bütün Özellikleri Tek Seferde Kontrol Et':
+                return redirect(url_for('select_all', filename=filename))
+
             else:
                 # redirect(url_for('select_file', filename=filename))
                 return "Error"
@@ -70,10 +73,9 @@ def register():
     return render_template('register.html')
 
 
-"""
 # selected file
 @app.route('/uploads/<filename>')
-def select_file(filename):
+def select_all(filename):
     filepath = '{_UPLOAD_FOLDER}/{_filename}'.format(
         _UPLOAD_FOLDER=UPLOAD_FOLDER, _filename=filename)
     content_list = RF.read_paragraph(filename=filepath)
@@ -87,7 +89,6 @@ def select_file(filename):
     #file_body = RF.file_body(filename=filepath)
     file_indent = RF.read_alignment_and_indent(filename=filepath)
     return render_template('file_operations.html', _checkMargin=_checkMargin, file_details=file_details, filename=filename, content_list=content_list, file_header=file_header, file_footer=file_footer, file_margin=file_margin, file_alignment=file_alignment, file_indent=file_indent)
-"""
 
 
 @app.route('/uploads/file_details/<filename>')
