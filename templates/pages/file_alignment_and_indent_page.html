@@ -1,7 +1,10 @@
 {% extends 'layout.html' %}
 <!--success color : #d4edda-->
-{% block style %} h3.title { text-align: center; } {%endblock style %} {% block
-body %}
+{% block style %}
+h3.title {
+    text-align: center;
+} {%endblock style %}
+{% block body %}
 <br>
 <h3 class="title">
   <i class="fas fa-file-word"></i> Bilgisi Gösterilen Dosya: {{filename}}
@@ -9,5 +12,8 @@ body %}
 
 <!-- BU KISIMDA ISTEDIGIN METODU INCLUDES ET-->
 
-{% include "includes/exit_control.html" %}
+{% include 'includes/file_alignment_and_indent.html' %}
+{% include 'includes/exit_control.html' %}
+
+
 {% endblock body %}

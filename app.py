@@ -39,14 +39,19 @@ def upload_file():
 
             if request.form['submit_button'] == 'Dosya Detayları':
                 return redirect(url_for('file_details', filename=filename))
-            if request.form['submit_button'] == 'Dosya Üst ve Alt Başlıkları':
+
+            elif request.form['submit_button'] == 'Dosya Üst ve Alt Başlıkları':
                 return redirect(url_for('file_header_footer', filename=filename))
-            if request.form['submit_button'] == 'Paragraf':
+
+            elif request.form['submit_button'] == 'Paragraf':
                 return redirect(url_for('paragraph', filename=filename))
-            if request.form['submit_button'] == 'Dosya Sayfa Yapısı':
+
+            elif request.form['submit_button'] == 'Dosya Sayfa Yapısı':
                 return redirect(url_for('file_page_structure', filename=filename))
-            if request.form['submit_button'] == 'Paragraf Hizalama ve Girinti':
+
+            elif request.form['submit_button'] == 'Paragraf Hizalama ve Girinti':
                 return redirect(url_for('file_alignment_and_indent', filename=filename))
+
             else:
                 # redirect(url_for('select_file', filename=filename))
                 return "Error"
@@ -65,6 +70,7 @@ def register():
     return render_template('register.html')
 
 
+"""
 # selected file
 @app.route('/uploads/<filename>')
 def select_file(filename):
@@ -81,9 +87,10 @@ def select_file(filename):
     #file_body = RF.file_body(filename=filepath)
     file_indent = RF.read_alignment_and_indent(filename=filepath)
     return render_template('file_operations.html', _checkMargin=_checkMargin, file_details=file_details, filename=filename, content_list=content_list, file_header=file_header, file_footer=file_footer, file_margin=file_margin, file_alignment=file_alignment, file_indent=file_indent)
+"""
 
 
-@app.route('/uploads/<filename>')
+@app.route('/uploads/file_details/<filename>')
 def file_details(filename):
     filepath = '{_UPLOAD_FOLDER}/{_filename}'.format(
         _UPLOAD_FOLDER=UPLOAD_FOLDER, _filename=filename)
@@ -91,38 +98,39 @@ def file_details(filename):
     return render_template('pages/file_details_page.html',  file_details=file_details, filename=filename)
 
 
-@app.route('/uploads/<filename>')
+@app.route('/uploads/file_header_footer/<filename>')
 def file_header_footer(filename):
     filepath = '{_UPLOAD_FOLDER}/{_filename}'.format(
         _UPLOAD_FOLDER=UPLOAD_FOLDER, _filename=filename)
     file_header = RF.file_header(filename=filepath)
     file_footer = RF.file_footer(filename=filepath)
-    return render_template('file_operations.html',  filename=filename,  file_header=file_header, file_footer=file_footer)
+    return render_template('pages/file_header_footer_page.html',  filename=filename,  file_header=file_header, file_footer=file_footer)
 
 
-@app.route('/uploads/<filename>')
+@app.route('/uploads/paragraph/<filename>')
 def paragraph(filename):
     filepath = '{_UPLOAD_FOLDER}/{_filename}'.format(
         _UPLOAD_FOLDER=UPLOAD_FOLDER, _filename=filename)
     content_list = RF.read_paragraph(filename=filepath)
-    return render_template('file_operations.html', filename=filename, content_list=content_list, )
+    return render_template('pages/paragraph_page.html', filename=filename, content_list=content_list)
 
 
-@app.route('/uploads/<filename>')
+@app.route('/uploads/file_page_structure/<filename>')
 def file_page_structure(filename):
     filepath = '{_UPLOAD_FOLDER}/{_filename}'.format(
         _UPLOAD_FOLDER=UPLOAD_FOLDER, _filename=filename)
     file_margin = RF.read_page_structure(filename=filepath)
     _checkMargin = CheckTrue.checkMargin
-    return render_template('file_operations.html', _checkMargin=_checkMargin, filename=filename, file_margin=file_margin)
+    return render_template('pages/file_page_structure_page.html', _checkMargin=_checkMargin, filename=filename, file_margin=file_margin)
 
 
-@app.route('/uploads/<filename>')
+@app.route('/uploads/file_alignment_and_indent/<filename>')
 def file_alignment_and_indent(filename):
     filepath = '{_UPLOAD_FOLDER}/{_filename}'.format(
         _UPLOAD_FOLDER=UPLOAD_FOLDER, _filename=filename)
     file_indent = RF.read_alignment_and_indent(filename=filepath)
-    return render_template('file_operations.html', filename=filename,  file_indent=file_indent)
+    file_alignment = RF.read_alignment(filename=filepath)
+    return render_template('pages/file_alignment_and_indent_page.html', filename=filename,  file_indent=file_indent, file_alignment=file_alignment)
 
 
 if __name__ == '__main__':
