@@ -58,4 +58,4 @@ Dosya Seç butonunu kullanarak docx/doc seçin ve analiz etmek istediğiniz öze
 
 > Resim 6 - Dosyada bulunan her bir paragrafın durumun gösterildiği ekran
 
-**Proje geliştirme aşamasındadır bu sebeple eksikler ve yanlışlar olabilir. aktif olarak üzerinde çalışıyorum.**
+**Proje geliştirme aşamasındadır bu sebeple eksikler ve yanlışlar olabilir. Aktif olarak üzerinde çalışıyorum.**
