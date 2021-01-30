@@ -88,6 +88,7 @@ def select_all(filename):
     file_alignment = RF.read_alignment(filename=filepath)
     #file_body = RF.file_body(filename=filepath)
     file_indent = RF.read_alignment_and_indent(filename=filepath)
+    RF.read_table(filename=filepath)
     return render_template('file_operations.html', _checkMargin=_checkMargin, file_details=file_details, filename=filename, content_list=content_list, file_header=file_header, file_footer=file_footer, file_margin=file_margin, file_alignment=file_alignment, file_indent=file_indent)
 
 

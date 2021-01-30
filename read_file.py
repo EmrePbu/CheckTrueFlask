@@ -7,6 +7,56 @@ from docx2python import docx2python
 # for i in sections:
 #    print(i.start_type)
 
+# TODO: buradaki return edilen dict i html de tablo oluşturarak ekrana yaz
+# tablodaki her bir değeri şu şekilde alabilirsin
+# for row in table.rows:
+#    for cell in row.cells:
+#        print(cell.text)
+# [[cell.text for cell in row.cells] for row in table.rows]
+
+
+def read_table(filename):
+    # bütün tablolar içerisinde dizi şeklinde bulunuyor
+    """
+    {
+        'table1':{
+            rowCount: 3,
+            columnCount:3,
+            content:[
+                ['Ad','Soyad','Yaş'],
+                ['Emre','Pbu',25],
+                ['Deneme','Deneme','10']
+            ]
+        },
+        'table2':{
+            rowCount: 3,
+            columnCount:3,
+            content:[
+                ['Ad','Soyad','Yaş'],
+                ['Emre','Pbu',25],
+                ['Deneme','Deneme','10']
+            ]
+        }
+    }
+    """
+    mainTablesArray = {}
+    doc = _readFile.Document(filename)
+    table = doc.tables
+    # bulunan tablo sayısı. len(table)
+    for i in table:  # tabloları tek tek geziyoruz.
+        mainTablesArray['table{index}'.format(index=table.index(i))] = {
+            'rowCount': len(i.rows),
+            'columnCount': len(i.columns),
+            'content': [[i.rows[row].cells[column].text for column in range(len(i.columns))] for row in range(len(i.rows))]
+        }
+        # i.alignment None, left oluyor CENTER (1), RIGHT (2)
+        # for j in range(len(i.rows[0].cells)):
+        #    # tablonun 0. satırının içeriği istersen 1 2 3 diye üstte aldığın row değeri kadar gez hepsini al
+        #    print(i.rows[0].cells[j].text)
+
+        # [[i.rows[row].cells[column].text for column in range(len(i.columns))] for row in range(len(i.rows))]
+    print(mainTablesArray)
+
 
 def read_paragraph(filename):
     """
