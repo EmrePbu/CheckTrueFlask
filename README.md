@@ -10,29 +10,29 @@ Python Flask frameworkunu kullanarak word dosyasında istediğimiz işlemleri ya
 
 ardından `localhost:5000` adresini tarayıcınızda ziyaret edin. Sizleri  `Resim 1` deki gibi bir ekran kaşılayacaktır.
 
-![image-20210130021047530](https://raw.githubusercontent.com/EmrePbu/CheckTrueFlask/main/documentation/image-20210130021047530.png?token=AIBMSMPNG4VPVDH2ZOU7Q33ACSPFA)
+<img src="./image-20210130021047530.png">
 
 > Resim 1 - Sistemin ana sayfasının bir görünümü.
 
 Dosya Seç butonunu kullanarak docx/doc seçin ve Yükle ve Analiz Et butonuna tıklayın. Ardından seçtiğiniz/görmek istediğiniz dosya özelliğine göre aşağıdaki ekran ile karşılaşacaksınız. 
 
-![image-20210130015638143](https://raw.githubusercontent.com/EmrePbu/CheckTrueFlask/main/documentation/image-20210130015638143.png?token=AIBMSMMXZD3TCQNGSJZ3RTLACSPHS)
+<img src="./image-20210130015638143.png">
 
 > Resim 2 - Dosya özelliklerinin görünümü
 
-![image-20210130021831285](https://raw.githubusercontent.com/EmrePbu/CheckTrueFlask/main/documentation/image-20210130021831285.png?token=AIBMSMJLYL5MTHJN3OVKB7TACSPI4)
+<img src="./image-20210130021831285.png">
 
 > Resim 3 - Dosyada bulunan alt ve üst başlıkların kontrolu
 
-![image-20210130022306238](https://raw.githubusercontent.com/EmrePbu/CheckTrueFlask/main/documentation/image-20210130022306238.png?token=AIBMSMOLERNJZBDZCUGQIH3ACSPK2)
+<img src="./image-20210130022306238.png">
 
 > Resim 4 - Dosyada bulunan paragrafların listesi ve bulundukları sıra numarası
 
-![image-20210130023452440](https://raw.githubusercontent.com/EmrePbu/CheckTrueFlask/main/documentation/image-20210130023452440.png?token=AIBMSMN6SX4F2P6XCGJ4PFDACSPMW)
+<img src="./image-20210130023452440.png">
 
 > Resim 5 - Kenar boşlukları ve yönlendirmeye dair bilgilerin bulunduğu ekran
 
-![image-20210130023756476](https://raw.githubusercontent.com/EmrePbu/CheckTrueFlask/main/documentation/image-20210130023756476.png?token=AIBMSMKGDSPAAJVDKQLTXZLACSPNW)
+<img src="./image-20210130023756476.png">
 
 > Resim 6 - Dosyada bulunan her bir paragrafın durumun gösterildiği ekran
 
