@@ -16,8 +16,6 @@ ardından `localhost:5000` adresini tarayıcınızda ziyaret edin. Sizleri `Resi
 
 Dosya Seç butonunu kullanarak docx/doc seçin ve Yükle ve Analiz Et butonuna tıklayın. Ardından seçtiğiniz/görmek istediğiniz dosya özelliğine göre aşağıdaki ekran ile karşılaşacaksınız.
 
-
-
 <img src="documentation/images/image-20210130015638143.png">
 
 > Resim 2 - Dosya özelliklerinin görünümü
