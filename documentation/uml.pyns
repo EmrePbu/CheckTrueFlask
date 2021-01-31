@@ -1,0 +1,13 @@
+# PynSource Version 1.2
+{'type':'meta', 'info1':'Lorem ipsum dolor sit amet, consectetur adipiscing elit is latin. Comments are saved.'}
+{'type':'umlshape', 'id':'Main', 'x':10, 'y':10, 'width':210, 'height':224, 'attrs': '', 'meths': 'allowed_file|documentation|file_alignment_and_indent|file_details|file_header_footer|file_page_structure|file_table|paragraph|register|select_all|upload_file'}
+{'type':'umlshape', 'id':'Metric', 'x':783, 'y':22, 'width':82, 'height':112, 'attrs': '', 'meths': 'cmToEmu|emuToCm|emuToIcnh|inchToEmu'}
+{'type':'umlshape', 'id':'CheckTrue', 'x':773, 'y':177, 'width':100, 'height':64, 'attrs': '', 'meths': 'checkMargin'}
+{'type':'umlshape', 'id':'WithDocx', 'x':388, 'y':11, 'width':210, 'height':128, 'attrs': '', 'meths': 'read_alignment|read_alignment_and_indent|read_page_structure|read_paragraph|read_table'}
+{'type':'umlshape', 'id':'WithDocx2Python', 'x':407, 'y':178, 'width':160, 'height':128, 'attrs': '', 'meths': 'file_body|file_footer|file_header|file_properties|file_save_image'}
+{'type':'edge', 'id':'Metric_to_WithDocx', 'source':'Metric', 'target':'WithDocx', 'uml_edge_type': 'generalisation'}
+{'type':'edge', 'id':'CheckTrue_to_WithDocx2Python', 'source':'CheckTrue', 'target':'WithDocx2Python', 'uml_edge_type': 'generalisation'}
+{'type':'edge', 'id':'Metric_to_WithDocx2Python', 'source':'Metric', 'target':'WithDocx2Python', 'uml_edge_type': 'generalisation'}
+{'type':'edge', 'id':'CheckTrue_to_WithDocx', 'source':'CheckTrue', 'target':'WithDocx', 'uml_edge_type': 'generalisation'}
+{'type':'edge', 'id':'WithDocx_to_Main', 'source':'WithDocx', 'target':'Main', 'uml_edge_type': 'generalisation'}
+{'type':'edge', 'id':'WithDocx2Python_to_Main', 'source':'WithDocx2Python', 'target':'Main', 'uml_edge_type': 'generalisation'}
