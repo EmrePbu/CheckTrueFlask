@@ -29,17 +29,22 @@ class WithDocx:
     """
     def read_table(filename):
         """
+        ENGLISH:\n
+            It provides access to the tables in the file. And it enables us to get a meaningful result by using pandas and numpy libraries.
         TÜRKÇE:\n
             Dosyada bulunan tablolara ulaşmayı sağlar. Ve pandas ile numpy kütüphanelerinden faydalanarak anlamlı bir sonuç elde etmemizi sağlar.
-        Args:
+        Args:\n
             filename (text):\n
+                ENGLISH:\n
+                    File name.
                 TÜRKÇE:\n
                     Dosya adı.
-
-        Returns:
+        Returns:\n
             list :\n
+                ENGLISH:\n
+                    Returns a nested list containing table data. If there is no table in the file, it returns None.
                 TÜRKÇE:\n
-                    Tablo verisini içeren iç içe liste
+                    Tablo verisini içeren iç içe liste döndürür. Eğer dosyada tablo yoksa None döndürür.
         """
         doc = _readFile.Document(filename)
         tables = doc.tables
