@@ -1,7 +1,12 @@
 {% extends 'layout.html' %}
 <!--success color : #d4edda-->
-{% block style %} h3.title { text-align: center; } {%endblock style %} {% block
-body %}
+{% block style %}
+h3.title {
+  text-align: center;
+}
+{%endblock style %}
+
+{% block body %}
 <br>
 <h3 class="title">
   <i class="fas fa-file-word"></i> Bilgisi Gösterilen Dosya: {{filename}}
@@ -16,7 +21,27 @@ body %}
 {% include 'includes/file_page_structure.html' %}
 {% include 'includes/file_alignment_and_indent.html' %}-->
 
+{% if file_table != none %}
+  <div class="alert alert-success" role="alert">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <h4 class="alert-heading">Tablolar Listesi</h4>
+    <p class="mb-0"> {{filename}} dosyasında bulunan toplam {{ file_table | length }} tablo aşağıda listelenmiştir.
+  </div>
 
+
+
+
+  {% for i in file_table %}
+  <h5>{{loop.index}}.tablo</h5>
+  {{ i.to_html(header = False,border=0, classes = 'table') | safe}}
+  {% endfor %}
+{% else %}
+  <div class="alert alert-warning" role="alert">
+    <h4 class="alert-heading">Tablo</h4>
+    <p class="mb-0"> {{filename}} dosyasında tablo bulunmamaktadır.
+  </div>
+
+{% endif %}
 
 
 {% include "includes/exit_control.html" %}
