@@ -63,13 +63,13 @@ Dosya Seç butonunu kullanarak docx/doc seçin ve analiz etmek istediğiniz öze
 
 ## Tablolar
 
-![image-20210202181945841](C:\Users\LENOVO\Documents\GitHub\CheckTrueFlask\documentation\images\image-20210202181945841.png)
+<img src="./images/image-20210202181945841.png">
 
 > Resim 7 - Dosyada bulunan bütün tabloların gösterildiği ekran
 
 ## Kaynaklar
 
-![image-20210202182042240](C:\Users\LENOVO\Documents\GitHub\CheckTrueFlask\documentation\images\image-20210202182042240.png)
+<img src="./images/image-20210202182042240.png">
 
 > Resim 7 - Dosyada bulunan kaynakların gösterildiği ekran
 
