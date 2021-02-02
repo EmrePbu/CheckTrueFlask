@@ -14,8 +14,8 @@ Kullandığım kütüphaneler:
 | [Flask · PyPI](https://pypi.org/project/Flask/)              |  1.1.2  |
 | [Jinja2 · PyPI](https://pypi.org/project/Jinja2/)            | 2.11.2  |
 | os                                                           |         |
-| pandas                                                       |         |
-| numpy                                                        |         |
+| [Pandas · PyPI]( https://pypi.org/project/pandas/ )          |         |
+| [Numpy · PyPI](https://pypi.org/project/numpy/)              |         |
 
 İlk olarak ana dosya dizininde aşağıdaki satırı komut satırınızda çalıştırın:
 
