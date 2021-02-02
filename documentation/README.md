@@ -20,10 +20,16 @@ Kullandığım kütüphaneler:
 İlk olarak ana dosya dizininde aşağıdaki satırı komut satırınızda çalıştırın:
 
 ```shell
->python main.py
+> python main.py
 ```
 
-ardından `localhost:5000` adresini tarayıcınızda ziyaret edin. Sizleri `Resim 1` deki gibi bir ekran kaşılayacaktır.
+ardından `localhost:5000` adresini tarayıcınızda ziyaret edin. Sizleri `Resim 1` deki gibi bir ekran karşılayacaktır.
+
+Dökümantasyonu için **documentation**/ dosya konumunda  aşağıdaki kodu komut satırında çalıştırın ve `localhost:3000` adresini  tarayıcınızda ziyaret edin.
+
+```sh
+> docsify serve .
+```
 
 <img src="./images/image-20210130021047530.png">
 
