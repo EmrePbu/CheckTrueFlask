@@ -3,27 +3,33 @@ import numpy as np
 from metric_converter import Metric
 import docx as _readFile
 from docx2python import docx2python
-from docx2python.docx_context import collect_numFmts
-from docx_utils.flatten import opc_to_flat_opc
-import zipfile
+# from docx2python.docx_context import collect_numFmts
+# from metric_converter import Converter
+from docx.enum.style import WD_STYLE_TYPE
 
 
-def DocToXml(docxFile):
-    opc_to_flat_opc(docxFile, "./trash/numbering.xml")
+def file_base_style(filename):
+    doc = _readFile.Document(filename)
+    styles = doc.styles
+    paragraph_styles = [s for s in styles if s.type == WD_STYLE_TYPE.PARAGRAPH]
+    for style in paragraph_styles:
+        print(style.name)
 
 
-def get_context(filename):
-    DocToXml(filename)
-    with open('trash/numbering.xml', 'rb') as file_data:
-        bytes_content = file_data.read()
-    #zipf = zipfile.ZipFile(file=filename)
-    #xml = zipf.read("trash/numbering.xml")
-    return collect_numFmts(bytes_content)
+def get_resources(filename):
+    doc = _readFile.Document(filename)
+    paragraphs = doc.paragraphs
+    for paragraph in paragraphs:
+        if(paragraph.text == "KAYNAKLAR"):
+            print("----------------------KAYNAKLAR----------------------")
+        if(paragraph.text != "" and paragraph.style.name == 'List Paragraph'):
+            print(paragraph.style.name, "---", paragraph.text, "\n")
 
-# def file_body(filename):
-#    doc = docx2python(filename)
-#    return doc.body
-#    #print('body', doc.body[0][0][0][1])
+    # def file_body(filename):
+    #    doc = docx2python(filename)
+    #    return doc.body
+
+    #    #print('body', doc.body[0][0][0][1])
 
 
 """ DOCX İLE YAZDIKLARIM"""
