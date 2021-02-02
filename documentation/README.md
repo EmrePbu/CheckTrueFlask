@@ -7,29 +7,29 @@ Kullandığım kütüphaneler:
 | Kullandığım Python Kütüphaneleri                             | Version |
 | ------------------------------------------------------------ | :-----: |
 | [pip · PyPI](https://pypi.org/project/pip/)                  |  21.0   |
-| Python                                                       |  3.9.1  |
 | [docx2python](https://docx2python.readthedocs.io/en/latest/index.html#installation) | 1.27.1  |
 | [python-docx](https://python-docx.readthedocs.io/en/latest/user/install.html#install) | 0.8.10  |
 | [Werkzeug · PyPI](https://pypi.org/project/Werkzeug/)        |  1.0.1  |
 | [Flask · PyPI](https://pypi.org/project/Flask/)              |  1.1.2  |
 | [Jinja2 · PyPI](https://pypi.org/project/Jinja2/)            | 2.11.2  |
-| os                                                           |         |
-| pandas                                                       |         |
-| numpy                                                        |         |
+| [Pandas · PyPI]( https://pypi.org/project/pandas/ )          |  1.1.5  |
+| [Numpy · PyPI](https://pypi.org/project/numpy/)              | 1.19.3  |
 
 İlk olarak ana dosya dizininde aşağıdaki satırı komut satırınızda çalıştırın:
 
 ```shell
-> python main.py
+>python main.py
 ```
 
-ardından `localhost:5000` adresini tarayıcınızda ziyaret edin. Sizleri `Resim 1` deki gibi bir ekran karşılayacaktır.
+ardından `localhost:5000` adresini tarayıcınızda ziyaret edin. Sizleri `Resim 1` deki gibi bir ekran kaşılayacaktır.
 
 Dökümantasyonu için **documentation**/ dosya konumunda  aşağıdaki kodu komut satırında çalıştırın ve `localhost:3000` adresini  tarayıcınızda ziyaret edin.
 
 ```sh
 > docsify serve .
 ```
+
+
 
 <img src="./images/image-20210130021047530.png">
 
@@ -71,15 +71,11 @@ Dosya Seç butonunu kullanarak docx/doc seçin ve analiz etmek istediğiniz öze
 
 <img src="./images/image-20210202181945841.png">
 
-
-
 > Resim 7 - Dosyada bulunan bütün tabloların gösterildiği ekran
 
 ## Kaynaklar
 
 <img src="./images/image-20210202182042240.png">
-
-
 
 > Resim 7 - Dosyada bulunan kaynakların gösterildiği ekran
 
