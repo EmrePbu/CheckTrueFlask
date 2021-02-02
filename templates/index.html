@@ -6,16 +6,64 @@
         <input type=file name=file>
         <br>
         <br>
-        
-        <p><input type="submit" name="submit_button" class="btn btn-primary" value="Dosya Detayları" ></p>
-        <p><input type="submit" name="submit_button" class="btn btn-info" value="Dosya Üst ve Alt Başlıkları"></p>
-        <p><input type="submit" name="submit_button" class="btn btn-success" value="Paragraf"></p>
-        <p><input type="submit" name="submit_button" class="btn btn-danger" value="Dosya Sayfa Yapısı"></p>
-        <p><input type="submit" name="submit_button" class="btn btn-warning" value="Paragraf Hizalama ve Girinti"></p>
-        <p><input type="submit" name="submit_button" class="btn btn-warning" value="Tablolar"></p>
-        <p><input type="submit" name="submit_button" class="btn btn-warning" value="Kaynaklar"></p>
-        <p>button below is for debug mode. </p>
-        <p><input type="submit" name="submit_button" class="btn btn-warning" value="Bütün Özellikleri Tek Seferde Kontrol Et"></p>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col"></th>
+              <th scope="col">Özelikler</th>
+              <th scope="col">Açıklamaları</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td><input type="submit" name="submit_button" class="btn btn-primary" value="Dosya Detayları" ></td>
+              <td>Yüklenilen dosya hakkında temel bilgileri içerir.</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td><input type="submit" name="submit_button" class="btn btn-secondary" value="Dosya Üst ve Alt Başlıkları"></td>
+              <td>Yüklenilen dosyada bulunan alt ve üst başlıkları getirir.</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td><input type="submit" name="submit_button" class="btn btn-success" value="Paragraf"></td>
+              <td>Yüklenilen dosya bulunan paragraf etiketine sahip bütün çıktıları getirir.</td>
+            </tr>
+            <tr>
+              <th scope="row">4</th>
+              <td><input type="submit" name="submit_button" class="btn btn-warning" value="Dosya Sayfa Yapısı"></td>
+              <td>Yüklenilen dosyanın sayfa yapısı ile ilgili bilgileri içerir.</td>
+            </tr>
+            <tr>
+              <th scope="row">5</th>
+              <td><input type="submit" name="submit_button" class="btn btn-info" value="Paragraf Hizalama ve Girinti"></td>
+              <td>Paragrafların hizalaması ve girintileri ile ilgili bilgileri getirir.</td>
+            </tr>
+            <tr>
+              <th scope="row">6</th>
+              <td><input type="submit" name="submit_button" class="btn btn-primary" value="Tablolar"></td>
+              <td>Yüklenilen dosya bulunan bütün tabloları getirir.</td>
+            </tr>
+            <tr>
+              <th scope="row">7</th>
+              <td><input type="submit" name="submit_button" class="btn btn-dark" value="Kaynaklar"></td>
+              <td>Yüklenilen dosya en altta yer alan kaynaklar kısmındaki bütün ürünleri getirir.</td>
+            </tr>
+            <tr>
+              <th scope="row">8</th>
+              <td><input type="submit" name="submit_button" class="btn btn-danger" value="Bütün Özellikleri Tek Seferde Kontrol Et"></td>
+              <td>
+                Üstte yer alan bütün özellikleri tek seferde kontrol etmeye yarar.
+                <h3>
+                  DİKKAT: Yavaş çalışır.
+                </h3>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </form>
 </div>
 {% endblock body %}
+
+{
