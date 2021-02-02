@@ -7,15 +7,13 @@ Kullandığım kütüphaneler:
 | Kullandığım Python Kütüphaneleri                             | Version |
 | ------------------------------------------------------------ | :-----: |
 | [pip · PyPI](https://pypi.org/project/pip/)                  |  21.0   |
-| Python                                                       |  3.9.1  |
 | [docx2python](https://docx2python.readthedocs.io/en/latest/index.html#installation) | 1.27.1  |
 | [python-docx](https://python-docx.readthedocs.io/en/latest/user/install.html#install) | 0.8.10  |
 | [Werkzeug · PyPI](https://pypi.org/project/Werkzeug/)        |  1.0.1  |
 | [Flask · PyPI](https://pypi.org/project/Flask/)              |  1.1.2  |
 | [Jinja2 · PyPI](https://pypi.org/project/Jinja2/)            | 2.11.2  |
-| os                                                           |         |
-| pandas                                                       |         |
-| numpy                                                        |         |
+| [Pandas · PyPI]( https://pypi.org/project/pandas/ )          | 1.1.5   |
+| [Numpy · PyPI](https://pypi.org/project/numpy/)              |  1.19.3 |
 
 İlk olarak ana dosya dizininde aşağıdaki satırı komut satırınızda çalıştırın:
 
