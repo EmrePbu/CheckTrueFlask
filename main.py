@@ -2,8 +2,7 @@ from metric_converter import CheckTrue
 import os
 from flask import Flask, render_template, flash, redirect, url_for, request
 from werkzeug.utils import secure_filename
-from read_file import WithDocx, WithDocx2Python
-
+from read_file import WithDocx, WithDocx2Python, get_context
 UPLOAD_FOLDER = 'documents'
 UPLOAD_IMAGE_FOLDER = 'images'
 ALLOWED_EXTENSIONS = {'doc', 'docx'}
@@ -102,6 +101,10 @@ class Main:
         filepath = '{_UPLOAD_FOLDER}/{_filename}'.format(
             _UPLOAD_FOLDER=UPLOAD_FOLDER, _filename=filename)
         file_details = WithDocx2Python.file_properties(filename=filepath)
+        # deneme satırı ------------------------------------------------
+        a = get_context(filename=filepath)
+        print(a)
+        # deneme satırı ------------------------------------------------
         return render_template('pages/file_details_page.html',  file_details=file_details, filename=filename)
 
     @app.route('/uploads/file_header_footer/<filename>')

@@ -1,9 +1,29 @@
 import pandas as pd
-
 import numpy as np
 from metric_converter import Metric
 import docx as _readFile
 from docx2python import docx2python
+from docx2python.docx_context import collect_numFmts
+from docx_utils.flatten import opc_to_flat_opc
+import zipfile
+
+
+def DocToXml(docxFile):
+    opc_to_flat_opc(docxFile, "./trash/numbering.xml")
+
+
+def get_context(filename):
+    DocToXml(filename)
+    with open('trash/numbering.xml', 'rb') as file_data:
+        bytes_content = file_data.read()
+    #zipf = zipfile.ZipFile(file=filename)
+    #xml = zipf.read("trash/numbering.xml")
+    return collect_numFmts(bytes_content)
+
+# def file_body(filename):
+#    doc = docx2python(filename)
+#    return doc.body
+#    #print('body', doc.body[0][0][0][1])
 
 
 """ DOCX İLE YAZDIKLARIM"""
@@ -285,8 +305,3 @@ class WithDocx2Python:
 
     # Dönüş türü [] list
     # genelde bütün data bu kısımda oluyor
-
-    def file_body(filename):
-        doc = docx2python(filename)
-        return doc.body
-        # print('body', doc.body[0][0][0][1])
