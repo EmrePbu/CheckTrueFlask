@@ -4,20 +4,23 @@ Python Flask frameworkunu kullanarak word dosyasında istediğimiz işlemleri ya
 
 Kullandığım kütüphaneler:
 
-| Kullandığım Python Kütüphaneleri                                                      | Version |
-| ------------------------------------------------------------------------------------- | :-----: |
-| [pip · PyPI](https://pypi.org/project/pip/)                                           |  21.0   |
+| Kullandığım Python Kütüphaneleri                             | Version |
+| ------------------------------------------------------------ | :-----: |
+| [pip · PyPI](https://pypi.org/project/pip/)                  |  21.0   |
+| Python                                                       |  3.9.1  |
+| [docx2python](https://docx2python.readthedocs.io/en/latest/index.html#installation) | 1.27.1  |
 | [python-docx](https://python-docx.readthedocs.io/en/latest/user/install.html#install) | 0.8.10  |
-| [docx2python](https://docx2python.readthedocs.io/en/latest/index.html#installation)   | 1.27.1  |
-| [Flask · PyPI](https://pypi.org/project/Flask/)                                       |  1.1.2  |
-| [Werkzeug · PyPI](https://pypi.org/project/Werkzeug/)                                 |  1.0.1  |
-| Python                                                                                |  3.9.1  |
-| [Jinja2 · PyPI](https://pypi.org/project/Jinja2/)                                     | 2.11.2  |
+| [Werkzeug · PyPI](https://pypi.org/project/Werkzeug/)        |  1.0.1  |
+| [Flask · PyPI](https://pypi.org/project/Flask/)              |  1.1.2  |
+| [Jinja2 · PyPI](https://pypi.org/project/Jinja2/)            | 2.11.2  |
+| os                                                           |         |
+| pandas                                                       |         |
+| numpy                                                        |         |
 
 İlk olarak ana dosya dizininde aşağıdaki satırı komut satırınızda çalıştırın:
 
 ```shell
->python app.py
+>python main.py
 ```
 
 ardından `localhost:5000` adresini tarayıcınızda ziyaret edin. Sizleri `Resim 1` deki gibi bir ekran kaşılayacaktır.
@@ -57,5 +60,19 @@ Dosya Seç butonunu kullanarak docx/doc seçin ve analiz etmek istediğiniz öze
 <img src="./images/image-20210130023756476.png">
 
 > Resim 6 - Dosyada bulunan her bir paragrafın durumun gösterildiği ekran
+
+## Tablolar
+
+![image-20210202181945841](C:\Users\LENOVO\Documents\GitHub\CheckTrueFlask\documentation\images\image-20210202181945841.png)
+
+> Resim 7 - Dosyada bulunan bütün tabloların gösterildiği ekran
+
+## Kaynaklar
+
+![image-20210202182042240](C:\Users\LENOVO\Documents\GitHub\CheckTrueFlask\documentation\images\image-20210202182042240.png)
+
+> Resim 7 - Dosyada bulunan kaynakların gösterildiği ekran
+
+
 
 **Proje hala geliştirilme aşamasındadır. Bu yüzden yanlışlar ve eksikler olabilir.**

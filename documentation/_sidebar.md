@@ -1,6 +1,1 @@
 - [Ana Sayfa](/)
-- [Dosya Özellikleri](sidebar/file_details.md)
-- [Üst ve Alt Başlıklar](sidebar/header_footer.md)
-- [Paragraf](sidebar/paragraph.md)
-- [Sayfa Yapısı](sidebar/file_page_structure.md)
-- [Girinti](sidebar/file_alignment_and_indent.md)
