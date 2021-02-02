@@ -4,24 +4,14 @@
 h3.title {
     text-align: center;
 }
-i.fa-minus{
-  color: green;
-}
-i.fa-times{
-  color: red;
-}
-i.fa-check{
-  color: green;
-}
 {%endblock style %}
-
 {% block body %}
 <br>
 <h3 class="title">
   <i class="fas fa-file-word"></i> Bilgisi Gösterilen Dosya: {{filename}}
 </h3>
 
-<!-- BU KISIMDA ISTEDIGIN METODU INCLUDES ET-->
+
 
 {% include 'includes/file_header.html' %}
 {% include 'includes/file_footer.html' %}

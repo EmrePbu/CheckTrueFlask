@@ -1,6 +1,3 @@
-from docx_utils.flatten import opc_to_flat_opc
-
-
 class Metric:
     """
     ENGLISH:
@@ -145,8 +142,3 @@ class CheckTrue:
             return True
         else:
             return False
-
-
-class Converter:
-    def DocToXml(docxFile, xmlFilePath):
-        opc_to_flat_opc(docxFile, xmlFilePath)

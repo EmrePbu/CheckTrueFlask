@@ -5,13 +5,11 @@
       <th scope="col">#</th>
       {% for i in file_indent %}
         <th scope="col">
-          
           {% if i == 'left' %}
           Sol Kenar Boşluğu(0 cm)
           {% elif i == 'right' %}
           Sağ Kenar Boşluğu(0 cm)
           {% endif %}
-            
         </th>
       {% endfor %}
       {% for i in file_alignment %}
@@ -21,7 +19,6 @@
           {% elif i == 'text' %}
             Yazı
           {% endif %}
-          
         </th>
       {% endfor %}
     </tr>
@@ -51,16 +48,16 @@
             </td>
             <td>
               {% if _alignment == 1 %}
-                ORTALI
+              <i class="fas fa-align-center"></i> ORTALI
               {% elif _alignment == 2 %}
-                SAĞA YASLI
+              <i class="fas fa-align-right"></i> SAĞA YASLI
               {% elif _alignment == 3 %}
-                İKİ YANA YASLI
+              <i class="fas fa-align-justify"></i> İKİ YANA YASLI
               {% else %}
-                SOLA YASLI
+              <i class="fas fa-align-left"></i> SOLA YASLI
               {% endif %}
             </td>
-          <td>{{_text}}</td>
+          <td><i class="fas fa-paragraph"></i> {{_text}}</td>
         </tr>
       {% endif %}
     {% endfor %}

@@ -3,7 +3,13 @@
 {% block style %}
 h3.title {
     text-align: center;
-} 
+}
+i.fa-times-circle{
+  color: red;
+}
+i.fa-check{
+  color: green;
+}
 {%endblock style %}
 
 {% block body %}
@@ -12,7 +18,7 @@ h3.title {
   <i class="fas fa-file-word"></i> Bilgisi Gösterilen Dosya: {{filename}}
 </h3>
 
-<!-- BU KISIMDA ISTEDIGIN METODU INCLUDES ET-->
+
 
 {% include 'includes/file_alignment_and_indent.html' %}
 {% include 'includes/exit_control.html' %}

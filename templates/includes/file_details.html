@@ -11,7 +11,7 @@
         {% elif key=='created'%}Oluşturulma Tarihi
         {% elif key =='modified'%}Düzenlenme Tarihi
         {% elif key=='title' %}Başlık
-        {% elif key =='subject'%}Konu 
+        {% elif key =='subject'%}Konu
         {% elif key =='keywords'%}Anahtar Kelimeler
         {% elif key =='description'%}Açıklama
         {% elif key =='category'%}Kategori
@@ -27,7 +27,7 @@
       {% for key,value in file_details.items() %}
       <td>
         {% if value!=None %}{{value}}
-        {% else %} -- 
+        {% else %} NaN
         {% endif %}</td>
       {% endfor %}
     </tr>

@@ -3,23 +3,24 @@ import numpy as np
 from metric_converter import Metric
 import docx as _readFile
 from docx2python import docx2python
-# from docx2python.docx_context import collect_numFmts
-# from metric_converter import Converter
+
+
+"""
+var olan bütün stilleri getirir.
 from docx.enum.style import WD_STYLE_TYPE
-
-
 def file_base_style(filename):
     doc = _readFile.Document(filename)
     styles = doc.styles
     paragraph_styles = [s for s in styles if s.type == WD_STYLE_TYPE.PARAGRAPH]
     for style in paragraph_styles:
         print(style.name)
+        """
 
-    # def file_body(filename):
-    #    doc = docx2python(filename)
-    #    return doc.body
-
-    #    #print('body', doc.body[0][0][0][1])
+# docx2python için
+# def file_body(filename):
+#    doc = docx2python(filename)
+#    return doc.body
+#    #print('body', doc.body[0][0][0][1])
 
 
 """ DOCX İLE YAZDIKLARIM"""
@@ -44,6 +45,24 @@ class WithDocx:
         Docx kütüphanesi ile yazdığım metotlar bulunur.\n
     """
     def read_resources(filename):
+        """
+        ENGLISH:\n
+            Provides access to the resources in the file.
+        TÜRKÇE:\n
+            Dosyada bulunan kaynakçaya ulaşmayı sağlar.
+        Args:\n
+            filename (text):\n
+                ENGLISH:\n
+                    File name.
+                TÜRKÇE:\n
+                    Dosya adı.
+        Returns:\n
+            list :\n
+                ENGLISH:\n
+                    Returns a nested list containing resources data.
+                TÜRKÇE:\n
+                    Kaynaklar verisini içeren iç içe liste döndürür.
+        """
         mainResourcesArray = []
         doc = _readFile.Document(filename)
         paragraphs = doc.paragraphs

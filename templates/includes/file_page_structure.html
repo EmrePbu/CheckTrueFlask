@@ -5,7 +5,6 @@
       <th scope="col"><i class="fas fa-sliders-h"></i></th>
       {% for i in file_margin  %}
         <th scope="col">
-          
           {% if i =='top' %}
           Üst Kenar Boşluğu(3 cm)
           {% elif i == 'right' %}
@@ -17,7 +16,6 @@
           {% elif i == 'portrait' %}
           Yönlendirme
           {% endif %}
-            
         </th>
       {% endfor %}
     </tr>
@@ -60,13 +58,11 @@
         {% endif %}
       </td>
       <td>
-        
         {% if _portrait == 'Dikey' %}
         <i class="fas fa-arrows-alt-v"></i> {{_portrait}}
         {% elif _portrait == 'Yatay' %}
         <i class="fas fa-arrows-alt-h"></i> {{_portrait}}
         {% endif %}
-          
       </td>
     </tr>
     {% endfor %}
