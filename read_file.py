@@ -15,16 +15,6 @@ def file_base_style(filename):
     for style in paragraph_styles:
         print(style.name)
 
-
-def get_resources(filename):
-    doc = _readFile.Document(filename)
-    paragraphs = doc.paragraphs
-    for paragraph in paragraphs:
-        if(paragraph.text == "KAYNAKLAR"):
-            print("----------------------KAYNAKLAR----------------------")
-        if(paragraph.text != "" and paragraph.style.name == 'List Paragraph'):
-            print(paragraph.style.name, "---", paragraph.text, "\n")
-
     # def file_body(filename):
     #    doc = docx2python(filename)
     #    return doc.body
@@ -53,6 +43,17 @@ class WithDocx:
     TURKÇE:\n
         Docx kütüphanesi ile yazdığım metotlar bulunur.\n
     """
+    def read_resources(filename):
+        mainResourcesArray = []
+        doc = _readFile.Document(filename)
+        paragraphs = doc.paragraphs
+        for paragraph in paragraphs:
+            # if(paragraph.text == "KAYNAKLAR"):
+            #    pass
+            if(paragraph.text != "" and paragraph.style.name == 'List Paragraph'):
+                mainResourcesArray.append(paragraph.text)
+        return mainResourcesArray
+
     def read_table(filename):
         """
         ENGLISH:\n

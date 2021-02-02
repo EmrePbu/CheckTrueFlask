@@ -1,0 +1,18 @@
+
+<table class="table">
+    <thead>
+        <tr>
+        <th scope="col"></th>
+        <th scope="col"><i class="fas fa-quote-left"></i> KAYNAKLAR <i class="fas fa-quote-right"></i></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in file_resources %}
+            <tr>
+                <th scope="row">[{{loop.index}}]</th>
+                <td>{{file_resources[loop.index-1]}}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% include "includes/table_freeze_header.html" %}

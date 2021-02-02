@@ -2,7 +2,7 @@ from metric_converter import CheckTrue
 import os
 from flask import Flask, render_template, flash, redirect, url_for, request
 from werkzeug.utils import secure_filename
-from read_file import WithDocx, WithDocx2Python, get_resources
+from read_file import WithDocx, WithDocx2Python
 UPLOAD_FOLDER = 'documents'
 UPLOAD_IMAGE_FOLDER = 'images'
 ALLOWED_EXTENSIONS = {'doc', 'docx'}
@@ -60,8 +60,12 @@ class Main:
                 elif request.form['submit_button'] == 'Tablolar':
                     return redirect(url_for('file_table', filename=filename))
 
+                elif request.form['submit_button'] == 'Kaynaklar':
+                    return redirect(url_for('file_resources', filename=filename))
+
                 else:
                     # redirect(url_for('select_file', filename=filename))
+                    # TODO: error page yap
                     return "Error"
         return render_template('index.html')
 
@@ -101,10 +105,6 @@ class Main:
         filepath = '{_UPLOAD_FOLDER}/{_filename}'.format(
             _UPLOAD_FOLDER=UPLOAD_FOLDER, _filename=filename)
         file_details = WithDocx2Python.file_properties(filename=filepath)
-        # deneme satırı ------------------------------------------------
-        get_resources(filename=filepath)
-
-        # deneme satırı ------------------------------------------------
         return render_template('pages/file_details_page.html',  file_details=file_details, filename=filename)
 
     @app.route('/uploads/file_header_footer/<filename>')
@@ -144,6 +144,14 @@ class Main:
             _UPLOAD_FOLDER=UPLOAD_FOLDER, _filename=filename)
         file_table = WithDocx.read_table(filename=filepath)
         return render_template('pages/file_tables_page.html', filename=filename, file_table=file_table)
+
+    @app.route('/uploads/file_resources/<filename>')
+    def file_resources(filename):
+        filepath = '{_UPLOAD_FOLDER}/{_filename}'.format(
+            _UPLOAD_FOLDER=UPLOAD_FOLDER, _filename=filename)
+        file_resources = WithDocx.read_resources(filename=filepath)
+
+        return render_template('pages/file_resources_page.html', filename=filename, file_resources=file_resources)
 
 
 if __name__ == '__main__':
