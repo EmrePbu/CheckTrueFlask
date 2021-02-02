@@ -25,6 +25,14 @@ Kullandığım kütüphaneler:
 
 ardından `localhost:5000` adresini tarayıcınızda ziyaret edin. Sizleri `Resim 1` deki gibi bir ekran kaşılayacaktır.
 
+Dökümantasyonu için **documentation**/ dosya konumunda  aşağıdaki kodu komut satırında çalıştırın ve `localhost:3000` adresini  tarayıcınızda ziyaret edin.
+
+```sh
+> docsify serve .
+```
+
+
+
 <img src="./documentation/images/image-20210130021047530.png">
 
 > Resim 1 - Sistemin ana sayfasının bir görünümü.
