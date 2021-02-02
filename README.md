@@ -7,7 +7,6 @@ Kullandığım kütüphaneler:
 | Kullandığım Python Kütüphaneleri                             | Version |
 | ------------------------------------------------------------ | :-----: |
 | [pip · PyPI](https://pypi.org/project/pip/)                  |  21.0   |
-| Python                                                       |  3.9.1  |
 | [docx2python](https://docx2python.readthedocs.io/en/latest/index.html#installation) | 1.27.1  |
 | [python-docx](https://python-docx.readthedocs.io/en/latest/user/install.html#install) | 0.8.10  |
 | [Werkzeug · PyPI](https://pypi.org/project/Werkzeug/)        |  1.0.1  |
