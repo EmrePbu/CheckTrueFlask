@@ -14,6 +14,7 @@ Kullandığım kütüphaneler:
 | [Jinja2 · PyPI](https://pypi.org/project/Jinja2/)            | 2.11.2  |
 | [Pandas · PyPI]( https://pypi.org/project/pandas/ )          | 1.1.5   |
 | [Numpy · PyPI](https://pypi.org/project/numpy/)              |  1.19.3 |
+| [docsify](https://docsify.js.org/#/)                        |  4.11.6 |
 
 İlk olarak ana dosya dizininde aşağıdaki satırı komut satırınızda çalıştırın:
 
