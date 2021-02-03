@@ -31,8 +31,8 @@ class Main:
             # if user does not select file, browser also
             # submit an empty part without filename
             if file.filename == '':
-                flash('No selected file')
-                return redirect(request.url)
+                errorMessage = 'File Not Found'
+                return render_template('error_page.html', errorMessage=errorMessage)
             if file and Main.allowed_file(file.filename):
                 filename = secure_filename(file.filename)
                 # dosya kaydetme işi
@@ -64,9 +64,8 @@ class Main:
                     return redirect(url_for('file_resources', filename=filename))
 
                 else:
-                    # redirect(url_for('select_file', filename=filename))
-                    # TODO: error page yap
-                    return "Error"
+                    errorMessage = 'Method is Not Allowed'
+                    return render_template('error_page.html', errorMessage=errorMessage)
         return render_template('index.html')
 
     # doc page
@@ -152,6 +151,18 @@ class Main:
         file_resources = WithDocx.read_resources(filename=filepath)
 
         return render_template('pages/file_resources_page.html', filename=filename, file_resources=file_resources)
+
+    @app.errorhandler(404)
+    def error404(e):
+        return render_template('error_page.html', e=e)
+
+#    @app.errorhandler(500)
+#    def error500(e):
+#        return render_template('error_page.html', e=e)
+#
+#    @app.errorhandler(405)
+#    def error405(e):
+#        return render_template('error_page.html', e=e)
 
 
 if __name__ == '__main__':
